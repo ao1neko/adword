@@ -34,13 +34,12 @@
   <div class="jumbotron">
           <div class="container">
             <h1>wordmaker</h1>
-            サブテキストサブテキストサブテキストサブテキストサブテキストサブテキスト
           </div>
   </div>
 
 
   <div class="container">
-  <h1 class="text-center"> 話しかけてみてください </h1>
+  <h1 class="text-center"> 簡単な単語を入力して下さい </h1>
   <p></P>
   <form action="/post" method="post" >
         <input type="text" class="form-control" id="exampleInputEmail1"  name="text" placeholder="input">
@@ -52,17 +51,17 @@
   <div class="container">
   <section class="toukou">
   {% if text %}
-    <h1>ダジャレ</h1>
+    <h1>入力単語を用いたダジャレ</h1>
     {% for t in text %}
       <p>{{t}}</p>
     {% endfor %}
 
-    <h1>ダジャレ</h1>
+    <h1>入力単語に関連した単語を用いたダジャレ</h1>
     {% for t3 in text3 %}
       <p>{{t3}}</p>
     {% endfor %}
 
-    <h1>きっかけ</h1>
+    <h1>アイデアのきっかけとなるようなフレーズ</h1>
     <p>{{text2}}</p>
   {% else %}
     {{ message }}
