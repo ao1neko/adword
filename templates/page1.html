@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- Form
+  ================================================== -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarColor01" aria-label="Toggle navigation" type="button" data-target="#navbarColor01" data-toggle="collapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  
+  <div class="jumbotron">
+          <div class="container">
+            <h1>wordmaker</h1>
+            サブテキストサブテキストサブテキストサブテキストサブテキストサブテキスト
+          </div>
+  </div>
+
+
+  <div class="container">
+  <h1 class="text-center"> 話しかけてみてください </h1>
+  <p></P>
+  <form action="/post" method="post" >
+        <input type="text" class="form-control" id="exampleInputEmail1"  name="text" placeholder="input">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+  </form>
+  </div>
+  
+  <p></p>
+  <div class="container">
+  <section class="toukou">
+  {% if text %}
+    <h1>ダジャレ</h1>
+    {% for t in text %}
+      <p>{{t}}</p>
+    {% endfor %}
+
+    <h1>ダジャレ</h1>
+    {% for t3 in text3 %}
+      <p>{{t3}}</p>
+    {% endfor %}
+
+    <h1>きっかけ</h1>
+    <p>{{text2}}</p>
+  {% else %}
+    {{ message }}
+  {% endif %}
+  </section>
+  </div>
+{% endblock %}
+
